@@ -28,7 +28,6 @@ func main() {
       json.NewEncoder(w).Encode(objmap)
 //  json.NewEncoder(w).Encode(b)
     })
-
     log.Fatal(http.ListenAndServe(":80", nil))
 
 }
