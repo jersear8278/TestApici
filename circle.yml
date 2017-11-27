@@ -1,0 +1,18 @@
+dependencies:
+  override:
+  # Remove cached Go sources
+  - rm -rf $HOME/.go_workspace
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIIGER
+test:
+  override:
+  - go vet ./...
+  - go test ./...
+experimental:
+  notify:
+    branches:
+      only:
+        - master
